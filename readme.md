@@ -1,8 +1,8 @@
 # My PhP PACS
-Overview
+# Overview
 This Picture Archiving and Communication System (PACS) is a web-based application for managing and viewing DICOM medical imaging files. It supports uploading, searching, viewing, and deleting DICOM files, with a user-friendly interface powered by Bootstrap and the DWV (DICOM Web Viewer). The application is designed to run on shared hosting environments with PHP and MySQL support, such as those provided by Bluehost, SiteGround, DreamHost, or similar servers, with a user-choosable installation directory.
-Features
 
+# Features
 Upload: Admins can upload DICOM (.dcm) files with metadata parsing using the Nanodicom library.
 Search: Users can search DICOM files by patient name, ID, modality, and other metadata fields.
 View: View DICOM files using the DWV viewer.
@@ -11,7 +11,7 @@ Role-Based Access: Admin (full access) and public user (search/view only) roles.
 Responsive Design: Mobile-friendly interface with Bootstrap 5.3.3.
 Flexible Installation: Choose any directory for installation (e.g., public_html/pacs).
 
-Prerequisites
+# Prerequisites
 To deploy this PACS application, ensure your hosting environment meets the following requirements:
 
 Web Server: Apache or similar with PHP support (e.g., Bluehost, SiteGround, DreamHost).
@@ -34,7 +34,7 @@ Nanodicom Library: Required for DICOM metadata parsing (manually uploaded).
 DWV Viewer: Version 0.11.0, either downloaded automatically or manually uploaded.
 SSL/TLS: HTTPS enabled for secure access (most hosting providers offer free SSL via AutoSSL or Let’s Encrypt).
 
-Installation
+# Installation
 Follow these steps to install the PACS application on your web server:
 
 Prepare the Directory:
@@ -61,8 +61,7 @@ Site Logo: PNG or JPG (100x30 to 300x100 pixels).
 
 Submit the form to start the installation.
 
-
-Installation Process:
+# Installation Process:
 
 The script validates inputs, checks the database connection, and ensures the installation directory is writable.
 If errors occur (e.g., invalid favicon, database issues, unwritable directory), they’ll be displayed for correction.
@@ -73,10 +72,7 @@ Generates files: config.php, session.php, login.php, index.php, search.php, dele
 Creates the MySQL dicom_files table for storing DICOM metadata.
 Logs actions to /home/username/install_log.txt.
 
-
-
-
-Post-Installation Steps:
+# Post-Installation Steps:
 
 Enable HTTPS: Use your hosting control panel to enable SSL/TLS (e.g., AutoSSL or Let’s Encrypt).
 Verify Files:
@@ -84,17 +80,14 @@ Check /<install_dir>/config.php for correct database credentials, domain, and ho
 Ensure /<install_dir>/sessions/ exists and is chmod 700.
 Confirm favicon (/<install_dir>/favicon.png or .jpg) and logo (/<install_dir>/logo.png or .jpg).
 
-
 Nanodicom Library:
 Download the Nanodicom library from its official source or a trusted repository.
 Upload nanodicom.php and the dicom/ folder to /<install_dir>/nanodicom/.
 Set permissions: chmod 755 /<install_dir>/nanodicom/, chmod 644 /<install_dir>/nanodicom/*.php, chmod 644 /<install_dir>/nanodicom/dicom/*.
 
-
 DWV Viewer (if auto-download failed):
 Download DWV v0.11.0 from https://github.com/ivmartel/dwv/releases/tag/v0.11.0.
 Extract and upload the viewers/ contents to /<install_dir>/dwv/.
-
 
 Set Permissions:
 Directories (/<install_dir>/, /<install_dir>/dicom-storage/, /<install_dir>/dwv/, /<install_dir>/css/, /<install_dir>/nanodicom/): chmod 755.
@@ -113,39 +106,28 @@ View (DWV): https://yourdomain.com/dwv/viewers/mobile/.
 Delete (admin): https://yourdomain.com/delete.php.
 Test with a sample DICOM file from https://www.dicomlibrary.com.
 
-
-
-
-
-Usage
+# Usage
 
 Login:
 Admin: Username: admin, Password: docentelasmercedes (full access to upload/delete).
 User: Username: user, Password: 1234 (search/view only).
 
-
 Upload DICOM Files (admin only):
 Go to index.php, select a .dcm file, and upload.
 Metadata is parsed and stored in the database.
-
 
 Search DICOM Files:
 Use search.php to search by patient name, ID, modality, etc.
 Results include links to view files in DWV.
 
-
 View DICOM Files:
 Access the DWV viewer via dwv/viewers/mobile/ or search result links.
-
 
 Delete DICOM Files (admin only):
 Use delete.php to select and delete files from the server and database.
 
-
 Debugging:
 Check /home/username/install_log.txt, /<install_dir>/login_debug.txt, and /<install_dir>/login_error.log for issues.
-
-
 
 Troubleshooting
 

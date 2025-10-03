@@ -1,0 +1,16 @@
+# PHP Extensions (enable in hosting control panel)
+mysqli
+zip
+fileinfo
+gd
+
+# PHP Settings (configure in hosting control panel)
+upload_max_filesize=32M
+post_max_size=32M
+max_execution_time=300
+
+# External Dependencies
+# Nanodicom Library: Download from official source or trusted repository
+# - Place nanodicom.php and dicom/ folder in /<install_dir>/nanodicom/
+# - Source: Check for latest version or use a trusted archive
+# DWV Viewer: Version 0.
